@@ -4,6 +4,8 @@ used firebase for authentication you can't access unless you're a user , reactiv
 there is a movie page and tv show page each of them have search functionality ,
 each movie or tv show have a details page.
 
+Live Demo : https://netflix-clone-mg.netlify.app/
+
 # Pages 
 - welcome page
 - sign in
