@@ -62,11 +62,11 @@ input {
 .cardWrapper {
   width: 200px;
   margin: 0 10px 20px 10px;
-  transition: all .3s ease ;
+  transition: all 0.3s ease;
 }
 
 .cardWrapper:hover {
-  transform: translateY(-10px) scale(1.1) ;
+  transform: translateY(-10px) scale(1.1);
 }
 
 .posterImg {

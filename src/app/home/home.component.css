@@ -124,3 +124,9 @@ input {
     padding: 0 10px;
   }
 }
+
+@media screen and (max-width: 820px) {
+  .cardContainer {
+    width: 30%;
+  }
+}
