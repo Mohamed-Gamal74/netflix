@@ -35,6 +35,8 @@ section {
   height: 80%;
   padding: 20px;
   border-radius: 11px;
+
+  z-index: 100 ;
 }
 
 .closeBtn {

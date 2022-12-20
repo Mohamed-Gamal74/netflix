@@ -49,10 +49,6 @@ li {
   background-color: var(--light-color);
 }
 
-.user {
-  width: 30px;
-  margin-right: 10px;
-}
 
 .logoutBtn {
   background-color: transparent;
@@ -60,9 +56,6 @@ li {
   color: var(--light-color);
   font-size: 1rem;
   font-weight: 400;
-  line-height: normal;
-  padding: 7px 17px;
-  border-radius: 3px;
 }
 
 @media screen and (max-width: 500px) {
@@ -73,16 +66,7 @@ li {
     width: 80px;
   }
 
-  .mainBtn,
-  .logoutBtn {
-    font-size: 0.8rem;
-  }
-
-  .user {
-    margin-right: 0px;
-  }
-
   li a {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

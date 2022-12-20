@@ -57,10 +57,10 @@
       </button>
     </div>
 
-    <div class="row gap-2 my-5" *ngIf="filterMovies.length > 0">
+    <div class="row  my-5" *ngIf="filterMovies.length > 0">
       <div
         [@fade]
-        class="cardContainer mb-5 col-md-2"
+        class="cardContainer mb-5  col-md-6 "
         *ngFor="let movie of filterMovies"
         (click)="movieDetailsHandler(movie.id, movie.genre_ids[0])"
       >
