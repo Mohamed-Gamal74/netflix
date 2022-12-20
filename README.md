@@ -1,3 +1,24 @@
+# Netflix Clone (Angular)
+
+used firebase for authentication you can't access unless you're a user , reactive form for validiation ,
+there is a movie page and tv show page each of them have search functionality ,
+each movie or tv show have a details page.
+
+# Pages 
+- welcome page
+- sign in
+- sign up
+- movies page 
+- tv shows page 
+- tv, movie details page 
+
+# Technologies
+- Angular 
+- Firebase
+- Bootstrap
+- TMDB Api
+- Youtube Player
+
 # Card
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
