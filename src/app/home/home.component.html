@@ -1,0 +1,95 @@
+<section>
+  <div class="imgWrapper">
+    <img src="../../assets/images/joker1.jpg" alt="joker" />
+
+    <div class="content">
+      <h2 class="text-capitalize">
+        Welcome. <br />
+        Millions of movies and TV shows to discover. Explore now.
+      </h2>
+
+      <div class="d-flex align-items-center">
+        <input
+          type="text"
+          placeholder="Search For Your Favorite Movie..."
+          class="searchInput"
+          [(ngModel)]="searchInput"
+          (keyup.enter)="searchHandler()"
+        />
+        <button class="searchBtn btn" (click)="searchHandler()">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="mb-5">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let movie of trendingMovies">
+          <ng-template carouselSlide [id]="movie.id">
+            <div
+              class="imgContainer"
+              (click)="movieDetailsHandler(movie.id, movie.genre_ids[0])"
+            >
+              <img
+                [src]="imgSrc + movie.poster_path"
+                alt="movie.title"
+                [title]="movie.title"
+              />
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+    <div class="btnContainer text-center">
+      <button class="btn activeBtn" (click)="clickHandler($event)" id="28">
+        Action
+      </button>
+      <button class="btn" (click)="clickHandler($event)" id="35">Comedy</button>
+      <button class="btn" (click)="clickHandler($event)" id="27">Horror</button>
+      <button class="btn" (click)="clickHandler($event)" id="10749">
+        Romance
+      </button>
+      <button class="btn" (click)="clickHandler($event)" id="99">
+        Documentaires
+      </button>
+    </div>
+
+    <div class="row gap-2 my-5" *ngIf="filterMovies.length > 0">
+      <div
+        [@fade]
+        class="cardContainer mb-5 col-md-2"
+        *ngFor="let movie of filterMovies"
+        (click)="movieDetailsHandler(movie.id, movie.genre_ids[0])"
+      >
+        <img
+          [src]="imgSrc + movie.poster_path"
+          class="card-img-top"
+          alt="movie.title"
+          [title]="movie.title"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title mb-0">{{ movie.title }}</h5>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="text-white-50"> {{ movie.release_date }} </span>
+            <span class="rate">
+              <i class="bi bi-star-fill"></i>
+              {{ movie.vote_average }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="filterMovies.length === 0"
+      #spinner
+      class="d-flex align-items-center justify-content-center my-5"
+    >
+      <mat-spinner></mat-spinner>
+    </div>
+  </div>
+</section>

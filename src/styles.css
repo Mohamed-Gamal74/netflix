@@ -1,0 +1,61 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --main-color: #e50914;
+  --dark-color: #000;
+  --border-color: #222;
+  --light-color: #fff;
+  --light-grey-color: #737373;
+}
+
+.borderBottom {
+  border-bottom: 8px solid var(--border-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-grey-color-color);
+}
+
+a:hover {
+  color: var(--light-color);
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+}

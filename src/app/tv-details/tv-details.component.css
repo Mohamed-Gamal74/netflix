@@ -1,0 +1,70 @@
+section {
+  padding-top: 100px;
+}
+
+.tvPoster {
+  border-radius: 11px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.rate {
+  color: #f8ce0b;
+}
+
+.mainBtn {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 15px;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.mainBtn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.videoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 70%;
+  height: 80%;
+  padding: 20px;
+  border-radius: 11px;
+}
+
+.closeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.closeBtn i {
+  color: #fff;
+}
+
+
+
+@media screen and (max-width : 500px) {
+  section {
+    text-align: center;
+  }
+
+  .movieDetailsTop {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .overview {
+    width: 100% !important;
+  }
+
+  .videoContainer {
+    width: 100%;
+  }
+
+}

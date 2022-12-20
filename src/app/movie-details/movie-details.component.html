@@ -1,0 +1,77 @@
+<section class="container">
+  <div class="row gy-4 align-items-center py-5">
+    <div class="col-md-6">
+      <div class="imgContainer">
+        <img
+          [src]="imgSrc + movieDetail.backdrop_path"
+          [alt]="movieDetail.title"
+          class="moviePoster"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="movieDetails">
+        <h2 class="fs-1">{{ movieDetail.title }}</h2>
+        <div class="d-flex align-items-center ms-1 movieDetails__top">
+          <span class="text-white-50 border border-1 border-white p-1">R </span>
+          <p class="mb-0 mx-2 text-white">{{ movieDetail.release_date }} ,</p>
+          <p class="mb-0 mx-2">
+            [
+            <ng-container *ngFor="let genre of movieDetail.genres">
+              {{ genre.name }} , </ng-container
+            >]
+          </p>
+          <p class="mb-0 mx-2">{{ movieDetail.runtime }} min ,</p>
+
+          <p class="rate mb-0">
+            <i class="bi bi-star-fill"></i>
+            {{ movieDetail.vote_average }}
+          </p>
+        </div>
+
+        <p class="text-white-50 my-3 w-75 overview">
+          {{ movieDetail.overview }}
+        </p>
+
+        <button class="btn mainBtn" (click)="showVideoHandler()">
+          <i class="bi bi-play-fill"></i>
+          Play Trailer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5" style="cursor: pointer">
+    <h2 class="fs-2 mb-4">Related Movies</h2>
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let movie of relatedMovies">
+        <ng-template carouselSlide [id]="movie.id">
+          <div class="imgWrapper" (click)="movieDetailsHandler(movie.id)">
+            <img
+              [src]="imgSrc + movie.poster_path"
+              alt="movie.title"
+              [title]="movie.title"
+            />
+          </div>
+          <p class="text-center my-2 text-white">{{ movie.title }}</p>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+
+  <div class="videoContainer" *ngIf="showVideo">
+    <button class="closeBtn" (click)="closeVideo()">
+      <i class="bi bi-x-circle-fill"></i>
+    </button>
+    <youtube-player
+      [videoId]="videoId"
+      height="100%"
+      width="100%"
+      startSeconds="startSeconds"
+      endSeconds="endSeconds"
+      suggestedQuality="suggestedQuality"
+    ></youtube-player>
+  </div>
+</section>

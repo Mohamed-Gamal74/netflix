@@ -1,0 +1,109 @@
+section {
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/d0a0affb-1c76-4cf0-9d75-eb531f32458c/6a948f80-f37c-41b4-9d06-04dc571b490d/EG-en-20221214-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.error {
+  border-radius: 4px;
+}
+
+.formContainer {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  min-height: 515px;
+  width: 400px;
+  padding: 30px 40px;
+}
+
+::ng-deep mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+::ng-deep
+  .mat-mdc-form-field
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #333;
+}
+
+::ng-deep
+  .mat-mdc-form-field:not(.mat-form-field-no-animations)
+  .mdc-floating-label {
+  color: var(--light-grey-color);
+}
+
+::ng-deep
+  .mat-mdc-form-field
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
+  color: #fff;
+}
+
+::ng-deep .mat-mdc-form-field .mdc-text-field .mdc-text-field__input {
+  caret-color: #fff !important;
+}
+
+::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: #e87c03;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--light-grey-color);
+  margin-right: 5px;
+}
+
+.mainBtn {
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--light-color);
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 30px 0;
+  padding: 10px 0;
+}
+
+.mainBtn:hover {
+  background-color: var(--main-color);
+}
+
+p {
+  color: var(--light-grey-color);
+}
+
+p a {
+  color: var(--light-color);
+}
+
+@media screen and (max-width: 500px) {
+  .formContainer {
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+

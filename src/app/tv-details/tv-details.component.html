@@ -1,0 +1,60 @@
+<section class="container vh-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="imgWrapper">
+        <img
+          [src]="imgSrc + tvDetail.backdrop_path"
+          [alt]="tvDetail.name"
+          class="tvPoster"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="movieDetails">
+        <h2 class="fs-1">{{ tvDetail.name }}</h2>
+        <div class="d-flex align-items-center ms-1 movieDetailsTop">
+          <span class="text-white-50 border border-1 border-white p-1">R </span>
+          <p class="mb-0 mx-2 text-white">{{ tvDetail.first_air_date }} ,</p>
+          <p class="mb-0 mx-2">
+            [
+            <ng-container *ngFor="let genre of tvDetail.genres">
+              {{ genre.name }} , </ng-container
+            >]
+          </p>
+          <p *ngIf="tvDetail.episode_run_time[0]" class="mb-0 mx-2">
+            {{ tvDetail.episode_run_time[0] }} min for episode ,
+          </p>
+
+          <p class="rate mb-0 mx-2">
+            <i class="bi bi-star-fill"></i>
+            {{ tvDetail.vote_average }}
+          </p>
+        </div>
+
+        <p class="text-white-50 my-3 w-75 overview">
+          {{ tvDetail.overview }}
+        </p>
+
+        <button class="btn mainBtn" (click)="showVideoHandler()">
+          <i class="bi bi-play-fill"></i>
+          Play Trailer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="videoContainer" *ngIf="showVideo">
+    <button class="closeBtn" (click)="closeVideo()">
+      <i class="bi bi-x-circle-fill"></i>
+    </button>
+    <youtube-player
+      [videoId]="videoId"
+      height="100%"
+      width="100%"
+      startSeconds="startSeconds"
+      endSeconds="endSeconds"
+      suggestedQuality="suggestedQuality"
+    ></youtube-player>
+  </div>
+</section>

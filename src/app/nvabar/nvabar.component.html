@@ -1,0 +1,29 @@
+<nav
+  class="d-flex align-items-center justify-content-between "
+  [ngClass]="fixed ? 'fixed' : ' '"
+>
+  <a routerLink="/movie" class="logoContainer">
+    <img src="../../assets/images/logo.png" class="w-100" alt="logo" />
+  </a>
+
+  <ul class="d-flex align-items-center gap-5 mt-2" *ngIf="logged" >
+    <li class="fs-5">
+      <a routerLink="/movie" routerLinkActive="active">Movie</a>
+    </li>
+
+    <li class="fs-5" >
+      <a routerLink="/tv" routerLinkActive="active">TV Shows </a>
+    </li>
+  </ul>
+
+  <div>
+    <button (click)="signinHandler()" *ngIf="!logged" class="btn mainBtn">Sign in</button>
+    <div class="d-flex align-items-center" *ngIf="logged" >
+      <img src="../../assets/images/2.png" alt="user" class="user" >
+      <button (click)="logoutHandler()" class="logoutBtn"  *ngIf="logged" >
+        <i class="bi bi-box-arrow-right"></i>
+        Logout</button>
+    </div>
+
+  </div>
+</nav>

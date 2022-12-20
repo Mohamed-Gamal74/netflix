@@ -1,0 +1,104 @@
+<section>
+  <div class="backgroundContainer">
+    <img src="../../assets/images/back.jpg" alt="backgroundImg" />
+
+    <div class="content">
+      <h2 class="text-capitalize">
+        Welcome. <br />
+        Millions of movies and TV shows to discover. Explore now.
+      </h2>
+
+      <div class="d-flex align-items-center">
+        <input
+          type="text"
+          placeholder="Search For Your Favorite TV Show..."
+          class="searchInput"
+          [(ngModel)]="searchInput"
+          (keyup.enter)="searchHandler()"
+        />
+        <button class="searchBtn btn" (click)="searchHandler()">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row borderBottom py-5">
+      <div class="col-md-4 align-self-center">
+        <h2 class="fs-1 title">Trending Tv</h2>
+      </div>
+
+      <div
+        *ngFor="let tv of trendingTv"
+        class="col-md-2 cardWrapper"
+        (click)="onSelect(tv.id)"
+        routerLink="/tv/{{ tv.id }}"
+        style="cursor: pointer"
+      >
+        <div class="tv position-relative">
+          <img
+            [src]="imgSrc + tv.poster_path"
+            [alt]="tv.title"
+            class="posterImg"
+          />
+          <h3 class="h6">{{ tv.name }}</h3>
+          <div class="rate position-absolute top-0 end-0">
+            <span class="fs-6">{{ tv.vote_average }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row borderBottom py-5">
+      <div class="col-md-4 align-self-center">
+        <h2 class="fs-1 title">Netflix Originals</h2>
+      </div>
+
+      <div
+        *ngFor="let tv of netflixOriginal"
+        class="col-md-2 cardWrapper"
+        (click)="onSelect(tv.id)"
+        routerLink="/tv/{{ tv.id }}"
+        style="cursor: pointer"
+      >
+        <div class="tv position-relative">
+          <img
+            [src]="imgSrc + tv.poster_path"
+            [alt]="tv.title"
+            class="posterImg"
+          />
+          <h3 class="h6">{{ tv.name }}</h3>
+          <div class="rate position-absolute top-0 end-0">
+            <span class="fs-6">{{ tv.vote_average }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row py-5">
+      <div class="col-md-4 align-self-center">
+        <h2 class="fs-1 title">Popular Tv</h2>
+      </div>
+
+      <div
+        *ngFor="let tv of tvPopular"
+        class="col-md-2 cardWrapper"
+        (click)="onSelect(tv.id)"
+        routerLink="/tv/{{ tv.id }}"
+        style="cursor: pointer"
+      >
+        <div class="tv position-relative">
+          <img
+            [src]="imgSrc + tv.poster_path"
+            [alt]="tv.title"
+            class="posterImg"
+          />
+          <h3 class="h6">{{ tv.name }}</h3>
+          <div class="rate position-absolute top-0 end-0">
+            <span class="fs-6">{{ tv.vote_average }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
