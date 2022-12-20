@@ -1,3 +1,19 @@
+# Netflix Clone (Angular)
+
+# Pages 
+- welcome page
+- sign in
+- sign up
+- movies page 
+- tv shows page 
+- tv, movie details page 
+
+# Technologies
+- Angular 
+- Firebase
+- Bootstrap
+- TMDB Api
+
 # Card
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
